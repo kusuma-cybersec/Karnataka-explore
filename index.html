@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Karnataka</title>
+
+    <link rel="stylesheet" href="Karnataka.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="Karnataka.js" defer></script>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <h2 class="logo">Explore Karnataka</h2>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#waterfalls">Waterfalls</a></li>
+            <li><a href="#hills">Hill Stations</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#travel">Travel Info</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Namaskara! Welcome to Karnataka</h1>
+        <p>
+    From the beautiful hills of Coorg to the historic streets of Hampi,
+    Karnataka has so many wonderful places to explore.
+    Let's discover its nature, culture, food and history!
+      </p>
+
+        
+        <a href="#destinations" class="explore-btn">
+            Explore Now
+        </a>
+    </div>
+</section>
+<section class="destinations" id="destinations">
+
+    <h2>Explore Tourist Destinations</h2>
+    <select id="districtSelect" onchange="filterByDistrict()">
+    <option value="all">All Districts</option>
+    <option value="vijayanagara">Vijayanagara</option>
+    <option value="kodagu">Kodagu (Coorg)</option>
+    <option value="chikkamagaluru">Chikkamagaluru</option>
+</select>
+<div>
+    <button onclick="randomDestination()">Random Destination</button>
+    <p id="randomResult"></p>
+</div>
+    <input type="text" id="searchPlace"
+placeholder="Search for a place..."
+onkeyup="searchDestinations()">
+<div class="filter-buttons">
+    <button onclick="filterPlaces('all')">All</button>
+    <button onclick="filterPlaces('nature')">Nature</button>
+    <button onclick="filterPlaces('history')">Historical</button>
+</div>
+
+    <p class="section-desc">
+        Discover the most beautiful places in Karnataka.
+    </p>
+
+    <div class="destination-container">
+
+        <div class="destination-card" data-category="history"
+            data-district="vijayanagara">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNHKWFnOXlLOfOQD1j59kzgcfTbHtKOprLsb8eMAnvw&s=10">
+            <h3>Hampi</h3>
+            <p>Explore the ancient ruins and magnificent Vijayanagara heritage.</p>
+            <button class="favorite-btn" onclick="toggleFavorite(this)" data-place="Hampi">
+    ♡ Add to Favourites
+</button>
+        </div>
+
+        <div class="destination-card" data-category="nature" data-district="kodagu">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0DfDiwXudayR1t68XhQgKR9OWPtQfd8WUKqqzNISU3g&s=10">
+            <h3>Coorg</h3>
+            <p>Experience lush greenery, coffee plantations and peaceful nature.</p>
+            <button class="favorite-btn" onclick="toggleFavorite(this)" data-place="Coorg">
+    ♡ Add to Favourites
+</button>
+
+        </div>
+
+        <div class="destination-card" data-category="nature" data-district="chikkamagaluru">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBig2mVriQWJntJ9zBYqFk5S3mhO6Vzpe7HkxQlnDsA&s=10">
+            <h3>Chikmagalur</h3>
+            <p>Enjoy beautiful mountains, scenic views and coffee estates.</p>
+           <button class="favorite-btn" onclick="toggleFavorite(this)" data-place="Chikmagalur">
+    ♡ Add to Favourites
+</button>
+</button>
+        </div>
+
+    </div>
+</section>
+<section class="history" id="history">
+
+    <h2>Historical Places of Karnataka</h2>
+
+    <p class="section-desc">
+        Discover the rich history and cultural heritage of Karnataka.
+    </p>
+
+    <div class="history-container">
+
+        <div class="history-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSiPn8MHx8uLo7fWUM19hlK1GZNng0BBn4_TFst4e0bw&s=10">
+            <h3>Mysore Palace</h3>
+            <p>A beautiful royal palace known for its architecture and history.</p>
+        </div>
+
+        <div class="history-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRrYdQjvx_WJFORH702tQfeXWKM2WNtvdgCqBV-t5HsQ&s=10">
+            <h3>Hampi</h3>
+            <p>Visit Hampi to explore ancient temples, stone monuments and the history of the Vijayanagara Empire.</p>
+        </div>
+
+        <div class="history-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXvnbKOY6wGSkcmOHGw5QMJlvec0eDV_8EyN7Lf1g3eg&s=10">
+            <h3>Badami Caves</h3>
+            <p>Famous rock-cut caves with beautiful historical carvings.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="waterfalls" id="waterfalls">
+
+    <h2>Beautiful Waterfalls</h2>
+
+    <p class="section-desc">
+        Experience the natural beauty of Karnataka's waterfalls.
+    </p>
+
+    <div class="waterfall-container">
+
+        <div class="waterfall-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtyloODxKrKQNW_8hnCfiTWX1SE_Q2VbwRfDmthiH-GA&s=10">
+            <h3>Jog Falls</h3>
+            <p>One of the highest and most famous waterfalls in India.</p>
+        </div>
+
+        <div class="waterfall-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReDlEXcTJzUSzvhr99Z8T61sI_gB10WL1SnqLRU5u-0g&s=10">
+            <h3>Abbey Falls</h3>
+            <p>A beautiful waterfall surrounded by coffee plantations in Coorg.</p>
+        </div>
+
+        <div class="waterfall-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJrLGSTKmuPJ1ekPzITNiwTE-gbt3g0ccBMiMvu7gjpQ&s=10">
+            <h3>Shivanasamudra Falls</h3>
+            <p>A scenic waterfall located on the River Kaveri.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="hills" id="hills">
+
+    <h2>Beautiful Hill Stations</h2>
+
+    <p class="section-desc">
+        Enjoy the cool weather, green mountains and peaceful views.
+    </p>
+
+    <div class="hills-container">
+
+        <div class="hill-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ylxkLMgcQ25tyN0YJednYoyv_AU2huJ7mOYI50lu2Q&s=10">
+            <h3>Chikmagalur</h3>
+            <p>Enjoy beautiful mountain views, coffee estabes and peaceful surroundings in Chikmagalur.</p>
+        </div>
+
+        <div class="hill-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJLyAPbtQVIFAObuw-6pYnt8NMv0eJgeFOdJt3YEZDdA&s=10">
+            <h3>Coorg</h3>
+            <p>Coorg is a lovely place known for its coffee planttations, green forests and pleasant weather.</p>
+        </div>
+
+        <div class="hill-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOJi7i5KJgBpKV01vWLvWx_EeHYHBEcbhfUCjf7xx_4g&s=10">
+            <h3>Agumbe</h3>
+            <p>Popular for its beautiful rainforests and scenic sunsets.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="food" id="food">
+
+    <h2>Famous Karnataka Food</h2>
+
+    <p class="section-desc">
+        Taste the delicious traditional food of Karnataka.
+    </p>
+
+    <div class="food-container">
+
+        <div class="food-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-WiBra9Fups1zaEiXnmrdWYxB9fQe-DdY7L8PX1ukUg&s=10">
+            <h3>Bisi Bele Bath</h3>
+            <p>A traditional rice dish prepared with lentils, vegetables and spices.</p>
+        </div>
+
+        <div class="food-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRofcVMhxFwDS1PzCCaYtn6S9v27B4xmvk0FgIScIvnbA&s=10">
+            <h3>Mysore Masala Dose</h3>
+            <p>A crispy dosa served with spicy chutney and potato filling.</p>
+        </div>
+
+        <div class="food-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW-Z7b08mpHwhgcwlKQhYQiF7uyPHT05sxBQmV8vpY3A&s=10">
+            <h3>Ragi Mudde</h3>
+            <p>A traditional Karnataka food made using finger millet flour.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="gallery" id="gallery">
+
+    <h2>Karnataka Photo Gallery</h2>
+
+    <p class="section-desc">Beautiful moments and places from Karnataka.</p>
+
+    <div class="gallery-container">
+        <img src="https://assets.cntraveller.in/photos/60ba1bc0002baf698cc673b2/master/w_1600%2Cc_limit/WildKarnataka.jpg" alt="Karnataka nature">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJd-TN0tq7GhRSE4YA3o_bn-QVR8d20htcgLFNx-nRPg&s" alt="Green forest">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK7sMcEPGSbMunR2mpx8Qd8Js5A3UtOOymPf647b3bUg&s=10" alt="Mountains">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuhNAC7YrJMme16bVt3UhQ91Mhprvm5yyq7Q6ymDw7FJVdfqb35gVTZtuM&s=10" alt="Waterfall">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Etuhkfm8cAYB_pPMNttimc9847zupfrsH28RPSgJHg&s=10" alt="Historical architecture">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfsFMonaT3PmeJzj-lcarsRNafLwQKMzTY4C1epaGDzw&s=10" alt="Nature view">
+    </div>
+
+</section>
+<section class="travel" id="travel">
+
+    <h2>Travel Information</h2>
+    <h3>Travel Budget Calculator</h3>
+
+<input type="number" id="travelers" placeholder="Number of travelers">
+
+<input type="number" id="days" placeholder="Number of days">
+
+<input type="number" id="dailyCost" placeholder="Cost per day">
+
+<button onclick="calculateBudget()">Calculate Budget</button>
+
+<p id="budgetResult"></p>
+
+    <p class="section-desc">Plan your journey across Karnataka with these useful tips.</p>
+
+    <div class="travel-container">
+
+        <div class="travel-card">
+            <h3>Best Time to Visit</h3>
+            <p>October to March is suitable for exploring most tourist destinations.</p>
+        </div>
+
+        <div class="travel-card">
+            <h3>Transportation</h3>
+            <p>Karnataka has buses, trains, taxis and airports for convenient travel.</p>
+        </div>
+
+        <div class="travel-card">
+            <h3>Travel Tips</h3>
+            <p>Carry comfortable clothes, water, essential items and follow local guidelines.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>Explore Karnataka</h3>
+<p>Let's explore the beauty of our Karnataka!</p>
+    
+</footer>
+
+    
+</body>
+</html>
